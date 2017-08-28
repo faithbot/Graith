@@ -3,33 +3,20 @@ var gulp = require('gulp'),
 	image = require('gulp-image'),
 	jshint = require('gulp-jshint'),
 	less = require('gulp-less'),
+	sourcemaps = require('gulp-sourcemaps'),
+
 	uglify = require('gulp-uglify'),
 	plumber = require('gulp-plumber'),
-	sourcemaps = require('gulp-sourcemaps')
+	concat = require('gulp-concat')
 ;
-
-
-// variables
-
-// app theme folder
-// /wedding/wp-content/themes/graith/
-destination = '/wedding/wp-content/themes/graith/',
-
-scss = '/dev/sass/',
-js = '/dev/js/',
-img = '/dev/img/',
-// languages ='/dev/languages/';
-
-
-// tasks
 
 // Uglify/minify scripts
 gulp.task('scripts', function(){
-	gulp.src('js/**/*.js')
+	gulp.src('dev/js/**/*.js')
 	.pipe(plumber())
-	//.pipe(concat('scripts.js'))
+	.pipe(concat('scripts.js'))
 	.pipe(uglify())
-	.pipe(gulp.dest('/wedding/wp-content/themes/graith/'));
+	.pipe(gulp.dest('wedding/wp-content/themes/graith/js/'));
 });
 
 // Compile Less
@@ -46,8 +33,14 @@ gulp.task('styles', function() {
 
 // Watch file changes
 gulp.task('watch', function() {
+	browserSync.init ({
+		open: 'external',
+		proxy: 'wedding.local',
+		port: 8080
+	});
 	gulp.watch('dev/js/**/*.js', ['scripts']);
 	gulp.watch('dev/less/**/*.less', ['styles']);
+	gulp.watch('dev/**/*').on('change', browserSync.reload);
 });
 
 // Default task
