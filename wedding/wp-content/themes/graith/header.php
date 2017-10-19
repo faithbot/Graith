@@ -25,20 +25,19 @@
 	<a class="skip-link screen-reader-text hidden" href="#content"><?php esc_html_e( 'Skip to content', 'graith' ); ?></a>
 
 	<header id="masthead" class="site-header">
-
+	<!-- banner pulled from featured image -->
 	<?php if( is_front_page() ) { ?>
 		<div class="home-banner">
 			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php } ?>
-
-	</header><!-- #masthead -->
+	</header>
 
 	<nav id="site-navigation" class="main-navigation">
 		<!-- mobile menu
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'graith' ); ?></button> 
 		-->
 		<?php wp_nav_menu( array( 'menu-1' => 'primary-menu' ) ); ?>
-	</nav><!-- #site-navigation -->
+	</nav>
 
 	<div id="content" class="site-content">
