@@ -33,10 +33,9 @@
 	<?php } ?>
 	</header>
 
-	<nav id="site-navigation" class="main-navigation">
-		<!-- mobile menu
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'graith' ); ?></button> 
-		-->
+	<!-- navigation -->
+	<nav id="site-navigation" class="navbar navbar-inverse bg-inverse">
+		<ul></ul>
 		<?php wp_nav_menu( array( 'menu-1' => 'primary-menu' ) ); ?>
 	</nav>
 
