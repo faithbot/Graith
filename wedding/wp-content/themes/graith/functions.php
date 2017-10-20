@@ -7,6 +7,17 @@
  * @package Graith
  */
 
+
+// stop WordPress from removing code in editor
+function override_mce_options($initArray) {
+	$opts = '*[*]';
+	$initArray['valid_elements'] = $opts;
+	$initArray['extended_valid_elements'] = $opts;
+	return $initArray;
+}
+add_filter('tiny_mce_before_init', 'override_mce_options');
+
+
 if ( ! function_exists( 'graith_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -118,7 +129,7 @@ add_action( 'widgets_init', 'graith_widgets_init' );
  */
 function graith_scripts() {
 	// compiled LESS styles
-	wp_enqueue_style( 'graith-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
 	// Bootstrap styles
 	wp_enqueue_style( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
