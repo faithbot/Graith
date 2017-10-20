@@ -22,20 +22,22 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text hidden" href="#content"><?php esc_html_e( 'Skip to content', 'graith' ); ?></a>
 
 	<header id="masthead" class="site-header">
-	<!-- banner pulled from featured image -->
-	<?php if( is_front_page() ) { ?>
-		<div class="home-banner">
-			<?php the_post_thumbnail(); ?>
-		</div>
-	<?php } ?>
+		<!-- banner pulled from featured image -->
+		<?php 
+			$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+			if( is_front_page() ) { ?>
+
+			<div class="header-image" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
+				
+			</div>
+
+		<?php } ?>
 	</header>
 
 	<!-- navigation -->
-	<nav id="site-navigation" class="navbar navbar-inverse bg-inverse">
-		<ul></ul>
+	<nav class="site-navigation">
 		<?php wp_nav_menu( array( 'menu-1' => 'primary-menu' ) ); ?>
 	</nav>
 
