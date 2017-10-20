@@ -21,10 +21,10 @@ gulp.task('scripts', function(){
 
 // Compile Less
 gulp.task('styles', function() {
-	gulp.src('dev/less/styles.less')
+	gulp.src('dev/less/style.less')
 	.pipe(plumber())
 	.pipe(less({
-		filename: 'styles.less',
+		filename: 'style.less',
 		compress: true
 	}))
 	.pipe(gulp.dest('wedding/wp-content/themes/graith/'));
