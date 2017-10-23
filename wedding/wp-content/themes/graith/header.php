@@ -30,6 +30,30 @@
 			if( is_front_page() ) { ?>
 
 			<div class="header-image" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
+
+				<!-- countdown -->
+				<div id="timer" class="timer">
+					<div class="timer__section days">
+						<div class="timer__number"></div>
+						<div class="timer__label">days</div>
+					</div>
+
+					<div class="timer__section hours">
+						<div class="timer__number"></div>
+						<div class="timer__label">hours</div>
+					</div>
+
+					<div class="timer__section minutes">
+						<div class="timer__number"></div>
+						<div class="timer__label">Minutes</div>
+					</div>
+
+					<div class="timer__section seconds">
+							<div class="timer__number"></div>
+						<div class="timer__label">seconds</div>
+					</div>
+				</div>
+				<!-- end countdown -->
 				
 			</div>
 

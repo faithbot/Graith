@@ -1,1 +1,1 @@
-var test = "test";
+console.log('hellow world');
