@@ -31,38 +31,43 @@
 
 			<div class="header-image" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
 				
-				<div class="heading-text">
-					<h1>Greg and Faith</h1>
-					<p>July 28, 2018</p>
-				</div>
-				
-				<!-- countdown -->
-				<div id="timer" class="timer">
-					<div class="timer__section days">
-						<div class="timer__number"></div>
-						<div class="timer__label">days</div>
+				<div class="heading-container">
+					
+					<div class="heading-text">
+						<h1>Greg and Faith</h1>
+						<p class="banner-date">July 28, 2018</p>
 					</div>
 					
-					<!--
-					<div class="timer__section hours">
-						<div class="timer__number"></div>
-						<div class="timer__label">hours</div>
-					</div>
-
-					<div class="timer__section minutes">
-						<div class="timer__number"></div>
-						<div class="timer__label">Minutes</div>
-					</div>
-
-					<div class="timer__section seconds">
+					<!-- countdown -->
+					<div id="timer" class="timer">
+						<div class="timer__section days">
 							<div class="timer__number"></div>
-						<div class="timer__label">seconds</div>
+							<div class="timer__label">days</div>
+						</div>
+						
+						<div class="timer__section hours">
+							<div class="timer__number"></div>
+							<div class="timer__label">hours</div>
+						</div>
+						
+						<div class="timer__section minutes">
+							<div class="timer__number"></div>
+							<div class="timer__label">Minutes</div>
+						</div>
+
+						<div class="timer__section seconds">
+								<div class="timer__number"></div>
+							<div class="timer__label">seconds</div>
+						</div>
+
 					</div>
+
+
 				</div>
-				-->
-				<!-- end countdown -->
-				
 			</div>
+
+				
+
 
 		<?php } ?>
 	</header>

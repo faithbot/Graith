@@ -128,13 +128,14 @@ add_action( 'widgets_init', 'graith_widgets_init' );
  * Enqueue scripts and styles.
  */
 function graith_scripts() {
-	// compiled LESS styles
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
 	// Bootstrap styles
 	wp_enqueue_style( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 	//wp_enqueue_style ('theme-style', get_template_directory_uri().'/styles.css');
 
+	// compiled LESS styles
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	
 	// Bootstrap scripts
 	// wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
 	
