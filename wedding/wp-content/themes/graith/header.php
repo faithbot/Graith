@@ -66,8 +66,6 @@
 				</div>
 			</div>
 
-				
-
 
 		<?php } ?>
 	</header>
