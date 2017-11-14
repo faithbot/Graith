@@ -1,14 +1,30 @@
 .site-navigation {
-	background-color: black;
+	border-bottom: 1px solid #ddd;
+	background-color: @navigation-background;
+	font-weight: bold;
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
 	
 	ul {
+		font-size: 0;
 		list-style: none;
+		margin: 0;
 	}
 	li {
+		background-color: white;
+		font-size: 20px;
 		padding: 15px;
 		display: inline-block;
+		a {
+			color: mediumpurple;
+		}
+	}
+	li:hover {
+		background-color: white;
+		a {
+			color: rebeccapurple;
+			text-decoration: none;
+		}
 	}
 }
