@@ -10,16 +10,17 @@
  */
 
 ?>
+  	<div class="push"></div>
 
-	</div><!-- #content -->
+	</div><!-- .site-content -->
 
-	<footer class="site-footer">
-		<div class="site-info">
-			<p>Made by Faithbot</p>
-		</div><!-- .site-info -->
-	</footer>
+</div><!-- .full-wrap -->
 
-</div><!-- #page -->
+<footer class="site-footer">
+	<div class="site-info">
+		<p>Made by Faithbot</p>
+	</div><!-- .site-info -->
+</footer>
 
 <?php wp_footer(); ?>
 

@@ -21,7 +21,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+	
+<div id="page" class="full-wrap">
 
 	<header id="masthead" class="site-header">
 		<!-- banner pulled from featured image -->
