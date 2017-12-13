@@ -18,7 +18,7 @@
 
 <footer class="site-footer">
 	<div class="site-info">
-		<p>Made by Faithbot</p>
+		<p></p>
 	</div><!-- .site-info -->
 </footer>
 
