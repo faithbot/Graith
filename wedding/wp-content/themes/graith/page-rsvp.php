@@ -20,6 +20,46 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
+			
+			<!-- RSVP form -->
+			<form>
+				
+				<div class="form-group">
+					<label for="full-name">Full Name <span class="required">*</span></label>
+					<input type="text" name="full-name" class="form-control" required="required">
+				</div>
+			
+				<div class="form-group">
+					<label for="email">Email <span class="required">*</span></label>
+					<input type="email" name="email" class="form-control" required="required">
+				</div>
+				
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="can-attend" id="can-attend" value="option1" checked>
+					<label class="form-check-label" for="can-attend">
+						Will Attend
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="cant-attend" value="cant-attend">
+					<label class="form-check-label" for="cant-attend">
+						Regretfully Decline
+					</label>
+				</div>
+
+				
+				<div class="form-group">
+					<label for="other-names">Additional Guest Names</label>
+					<textarea name="email" class="form-control" rows="4">
+					</textarea>
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Submit</button>
+				
+			</form>
+			
+			
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
