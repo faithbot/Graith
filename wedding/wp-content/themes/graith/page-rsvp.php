@@ -23,38 +23,59 @@
 
 
 //user posted variables
-if (isset($_POST['full-name'])) {
-	$name = $_POST['full-name'];
-}
-if (isset($_POST['email'])) {
-	$email = $_POST['email'];
-}
+$name = $_POST['full-name'];
+$email = $_POST['email'];
 if (isset($_POST['other-names'])) {
 	$otherNames = $_POST['other-names'];
 }
 if (isset($_POST['attend'])) {
 	$attend = $_POST['attend'];
 }
+$date = gmdate("M d Y"); 
 
 
 //php mailer variables
 //$to = get_option('admin_email');
 $to = 'faith@faithbot.com';
 $subject = "Someone sent a message from ".get_bloginfo('name');
-$headers = 'From: '. $email . "\r\n" .
-  'Reply-To: ' . $email . "\r\n";
+$headers = 'From: '. $email . "\r\n" .  'Reply-To: ' . $email . "\r\n";
 
-// on form submit
-if (isset($_POST['submit'])) 
-{ 
-    $sent = wp_mail($to, $subject, strip_tags($message), $headers);
-		if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
-		else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+
+
+//If the form is submitted
+if(isset($_POST['submitted'])) {
+	
+	//Check to see if the honeypot captcha field was filled in
+	if(trim($_POST['checking']) !== '') {
+	 $captchaError = true;
+	} else {
+		
+		if(!isset($hasError)) {
+
+		 $emailTo = 'faith@faithbot.com';
+		 $subject = 'Form Submission from '.$name;
+		 //$sendCopy = trim($_POST['sendCopy']);
+		 $body =  "Date: $date \n Name: $name \n E-mail: $email \n Other Guests: $otherNames \n Attend: $attend \n\n";
+			mail($to,$subject,$body); 
+		 $headers = 'From: My Site <'.$emailTo.'>' . "rn" . 'Reply-To: ' . $email;
+
+		 mail($emailTo, $subject, $body, $headers);
+
+//		 if($sendCopy == true) {
+//			$subject = 'You emailed <strong>Your Name</strong>';
+//			$headers = 'From: <strong>Your Name</strong> <<strong>noreply@somedomain.com</strong>>';
+//			mail($email, $subject, $body, $headers);
+//		 }
+
+		 $emailSent = true;
+
+		}
+		
+	}
+
 }
-else
-{
-    // Show Form
-}
+
+
 
 
 
@@ -72,7 +93,16 @@ get_header(); ?>
 			?>
 			
 			
-			<?php echo $response; ?>
+			
+			<!-- success/error message -->
+			<?php if(isset($emailSent) && $emailSent == true) { ?>
+
+				<div class="success-notice">Thank you for your RSVP!</div>
+
+			<?php } else { ?>
+
+			
+		 	<?php } ?>
 			
 			
 			<!-- RSVP form -->
@@ -110,7 +140,7 @@ get_header(); ?>
 					
 				</div>
 
-				<input type="hidden" name="submitted" value="1">
+				<input type="hidden" name="submitted" id="submitted" value="true" />
 				<button type="submit" class="btn">Submit</button>
 				
 			</form>
