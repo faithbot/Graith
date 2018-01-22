@@ -18,7 +18,7 @@
 
 <footer class="site-footer">
 	<div class="site-info">
-		<p></p>
+		<p>Contact: faith@faithbot.com</p>
 	</div><!-- .site-info -->
 </footer>
 
